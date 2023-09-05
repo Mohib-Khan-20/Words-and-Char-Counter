@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words and Character Counter</title>
+</head>
+<style>
+    body{
+        padding:20px 50px;
+    }
+    h1{
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 12px;
+        margin-bottom: 0;
+    }
+    textarea{
+        /* text-align: center; */
+        width: 99.3%;
+        height: 50vh;
+        font-size: 15px;
+    }
+    p{
+        text-align: center;
+        background-color: black;
+        padding:12px;
+        color: white;
+        margin-top: 0;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <h1>Words and Character Counter</h1>
+    <textarea  id="tex-box" cols="30" rows="10"></textarea>
+    <p>
+        <span id="words">0</span> words and 
+        <span id="Character">0</span> Characters
+    </p>
+
+    <script>
+        var textbox= document.getElementById("tex-box")
+
+        textbox.addEventListener("input",function(){
+            let text = this.value
+            let car = text.length
+            document.getElementById("Character").innerHTML=car;
+            
+           text= text.trim();
+            let words= this.value
+            let split= words.split(' ')
+            document.getElementById("words").innerHTML= split.length;
+        })
+    </script>
+</body>
+</html>
